@@ -2,6 +2,13 @@ from lyrahgames/gcc-cmake:latest
 
 label maintainer="markuspawellek@gmail.com"
 
+arg VCS_REF
+arg BUILD_DATE
+label \
+  org.label-schema.build-date=$BUILD_DATE \
+  org.label-schema.vcs-ref=$VCS_REF \
+  org.label-schema.vcs-url="https://github.com/lyrahgames/docker-gcc-cmake-eigen-doctest.git"
+
 # install latest Eigen library
 workdir /tmp
 run git clone https://github.com/eigenteam/eigen-git-mirror.git --depth=1 --branch master --single-branch eigen
